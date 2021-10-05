@@ -1,6 +1,8 @@
 module.exports.helloWorld = (req, res) => {
-    const responseObj = {msg: 'Hello World!'};
+    let responseObj = {};
     const nomAlumnos = ['Alex','Gerard','Roger'];
+    responseObj.alumnos = nomAlumnos;
+    responseObj.countAulumnos = 3;
     const responseStatus = 200;
 res.status(responseStatus).send(nomAlumnos);
 };
