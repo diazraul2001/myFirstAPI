@@ -1,0 +1,25 @@
+const day = new Date();
+
+const status= {
+    ok: 200,
+    NotFound: 404,
+
+};
+        module.exports = {
+              ej1: (req, res) => {
+                  let mil = new Date().getTime();
+                res.status(200).send({time:mil});
+              },
+
+              ej2:  (req, res) => {
+                const hoy = new Date();
+                const fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
+                  res.status(status.ok).send({Fecha:fecha});
+              },
+
+              ej3: (req, res) => {
+                const hoy = new Date();
+                const hora = hoy.getHours() + ':' + ( hoy.getUTCMinutes() + 1 ) + ':' + hoy.getSeconds();
+                res.status(status.ok).send({Hora:hora});
+              }
+        }

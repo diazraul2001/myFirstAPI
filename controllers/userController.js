@@ -25,12 +25,5 @@ const status= {
                     const msg = { error: "User Id not Found"};
                     res.status(status.NotFound).send(user);
                 }
-
-            },
-            ej1: (req, res) => {
-                
-                res.status(200).send(day);
-                res.status(200).send(day.now());
-                // res.status(200).send(day.);
             }
         }
