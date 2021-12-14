@@ -9,7 +9,7 @@ const day = new Date();
 const status= {
     ok: 200,
     NotFound: 404,
-
+    created: 201
 };
         module.exports = {
             list: (req, res) => {
@@ -25,5 +25,11 @@ const status= {
                     const msg = { error: "User Id not Found"};
                     res.status(status.NotFound).send(user);
                 }
+            },
+            create: (req,res)=>{
+                const  user = req.body;
+                user.id = users.length +1;
+                users.push(user);
+                res.status(status.created).send(user);
             }
         }
